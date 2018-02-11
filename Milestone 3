@@ -1,0 +1,74 @@
+//Nate R. This is my own work.
+
+
+public class NFL_Managers_Info extends NFL_Players_Info1 {
+
+	    NFL_Players_Info1[] arrayList = new NFL_Players_Info1[5];
+	    
+	    // Constructor with no arguments:
+	    
+	    public NFL_Managers_Info() {
+	        createNFLPlayers(arrayList.length);
+	    }
+	    
+	    // Gives values to arrays:
+	    
+	    private void createNFLPlayers(int quantity) {
+	        for(int i = 0; i < quantity; i++) {
+	            arrayList[i] = new NFL_Players_Info1();
+	        }
+	    }
+	    
+	    //Displays NFL_Players_Info values:
+	    
+	    public void displayPlayerInfo(int index) {
+	        if (index >= arrayList.length) {
+	            System.out.println(" Index not in range. Try again " 
+	                    + (arrayList.length - 1));
+	        } else {
+	        System.out.println(" Name: " + arrayList[index].getName() + " College: " 
+	                + arrayList[index].getCollege());
+	        System.out.println(arrayList[index].getIsDrafted() + " " + arrayList[index].getPosition());
+	        System.out.println(arrayList[index].getHeight() + " inches, " + arrayList[index].getWeight()
+	                + " lbs ");
+	        System.out.println(" Date aquired: " + arrayList[index].getYearAquired());
+	        }
+	    }
+	    
+	    // Display all values under NFL_Manager_Class:
+	    
+	    public void displayPlayerInfo() {
+	        for (int index = 0; index < arrayList.length; index++) {
+	            System.out.println(" Name: " + arrayList[index].getName() + " College: "
+	                    + arrayList[index].getCollege());
+	            System.out.println(arrayList[index].getIsDrafted() + " " 
+	                    + arrayList[index].getPosition());
+	            System.out.println(arrayList[index].getHeight() + " inches, " 
+	                    + arrayList[index].getWeight() + " lbs");
+	            System.out.println(" Date aquired: " + arrayList[index].getYearAquired() + "\n");
+	        }
+	    }
+	    
+	    // NFL_Player_Info Statistics String:
+	    
+	    public String getPlayerStats(int index) {
+	        return Integer.toString(arrayList[index].getPassYds()) + " " 
+	                + Integer.toString(arrayList[index].getTackles()) + " " 
+	                + Integer.toString(arrayList[index].getRushYds()) + " " 
+	                + Integer.toString(arrayList[index].getSacks()) + " " 
+	                + Integer.toString(arrayList[index].getRecievingYds())  + " "
+	                + Integer.toString(arrayList[index].getInterceptions());
+	    }
+	    
+	    public static void extend() {
+	        NFL_Managers_Info manager = new NFL_Managers_Info();
+	        manager.displayPlayerInfo();
+	        
+	        // NFL_Players_Info to NFL_Manager_Info:
+	        
+	        for(int index = 0; index < manager.arrayList.length; index++) {
+	            System.out.println(manager.arrayList[index].getName() + "'s individual event stats: " 
+	                    + manager.getPlayerStats(index));
+	        }
+	    }
+	}
