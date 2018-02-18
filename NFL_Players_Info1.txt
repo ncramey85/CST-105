@@ -1,0 +1,161 @@
+//Nate R. This is my own work.
+
+import java.util.*;
+
+public abstract class NFL_Players_Info1 {
+
+	public static int length;
+
+
+	public NFL_Players_Info1() {	
+	}   
+	
+	// Calendar Object 
+	
+    Calendar cal = Calendar.getInstance();
+    private String name;
+    private String college;
+    private String position;
+    private double height;
+    private double weight;
+    private int passYds;
+    private int recievingYds;
+    private int rushYds;
+    private int tackles;
+    private int sacks;
+    private int interceptions;
+    private boolean isDrafted;
+
+
+    // Constructor w/ arguments
+    
+    protected NFL_Players_Info1(String newName, String newCollege, String newPosition,  
+    		double newHeight, double newWeight,  int newYearAquired, boolean newIsDrafted) {
+        this.name = newName;
+        this.college = newCollege;
+        this.position = newPosition;
+        this.height = newHeight;
+        this.weight = newWeight;
+        this.passYds = 0;
+        this.recievingYds = 0;
+        this.rushYds = 0;
+        this.tackles = 0;
+        this.sacks = 0;
+        this.interceptions = 0;
+        this.isDrafted = newIsDrafted;
+    }
+
+    // Constructor w/out arguments
+    
+    protected void NFL_Players_Info() {
+        this.name = "Unkown";
+        this.college = "Unknown";
+        this.position = "Unknown";
+        this.height = 0;
+        this.weight = 0;
+        this.passYds = 0;
+        this.recievingYds = 0;
+        this.rushYds = 0;
+        this.tackles = 0;
+        this.sacks = 0;
+        this.interceptions = 0;
+        this.isDrafted = false;
+    }
+
+    // Set Methods:
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+    public void setCollege(String newCollege) {
+        this.college = newCollege; 
+    }
+    public void setPosition(String newPosition) {
+        this.position = newPosition;
+    }
+    public void setHeight(double newHeight) {
+        this.height = newHeight;
+    }
+    public void setWeight(double newWeight) {
+        this.weight = newWeight;
+    }
+    public void setPassYds(int newPassYdsTotals) {
+        this.passYds = newPassYdsTotals;
+    }
+    public void setRecievingYds(int newRecievingYds) {
+        this.recievingYds = newRecievingYds;
+    }
+    public void setRushYds(int newRushYdsTotals) {
+        this.rushYds = newRushYdsTotals;
+    }
+    public void setTackles(int newTacklesTotals) {
+        this.tackles = newTacklesTotals;
+    }
+    public void setSacks(int newSacksTotals) {
+        this.sacks = newSacksTotals;
+    }    
+    public void setInt(int newInt) {
+        this.interceptions = newInt;
+    }
+    public void toggleIsDrafted() {
+        this.isDrafted = (this.isDrafted) ? false : true;
+    }
+    
+    // Get Methods:
+    
+    public String getName() {
+        return this.name;
+    }
+    public String getCollege() {
+        return this.college;
+    }
+    public String getPosition() {
+        return this.position;
+    }
+    public double getHeight() {
+        return this.height;
+    }
+    public double getWeight() {
+        return this.weight;
+    }
+    public int getPassYds() {
+        return this.passYds;
+    }
+    public int getRecievingYds() {
+        return this.recievingYds;
+    }    
+    public int getRushYds() {
+        return this.rushYds;
+    }
+    public int getTackles() {
+        return this.tackles;
+    }
+    public int getSacks() {
+        return this.sacks;
+    }
+    public int getInterceptions() {
+        return this.interceptions;
+    }
+    public boolean getIsDrafted() {
+        return this.isDrafted;
+    }
+
+    
+    // Statistics:
+    
+    public int getStatsTotal() {
+        return this.passYds + this.tackles + this.rushYds + this.sacks
+                + this.recievingYds + this.interceptions;
+    }
+    
+    // Spaces Statistics out in orderly fashion:
+    
+    public String statsToString() {
+        return Integer.toString(this.passYds) + " " + 
+               Integer.toString(this.tackles) + " " + Integer.toString(this.rushYds) + " " 
+               + Integer.toString(this.sacks) + " " + Integer.toString(this.recievingYds)  + " "
+               + Integer.toString(this.interceptions);
+	}
+}
+
+
