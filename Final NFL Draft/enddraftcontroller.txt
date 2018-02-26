@@ -1,0 +1,41 @@
+//Nate R. This is my own work.
+package Mock_NFL_Draft_Final_2018;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+public class EndDraftController implements Initializable {
+	@FXML
+    private Button returnbutton;
+
+    @FXML
+    private Button exitbutton;
+
+    @FXML
+    void exitbuttonhandle(ActionEvent event) {
+        System.exit(0);  }
+    
+    @FXML
+    void returnbuttonhandle(ActionEvent event) {
+        try{
+                Stage stage = (Stage) returnbutton.getScene().getWindow();
+
+                stage.close();
+
+    } catch(Exception e){
+        System.out.println("Cant load window");
+    }
+ }
+    
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
+}

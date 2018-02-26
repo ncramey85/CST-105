@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="850.0" prefWidth="850.0" style="-fx-background-color: light blue;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nfldraft.MyDraftedPlayersController">
+   <children>
+      <ImageView fitHeight="396.0" fitWidth="429.0" layoutX="192.0" layoutY="79.0">
+         <image>
+            <Image url="@../../../../Users/Customer%20Support/Pictures/NFLFinal_Images/misc/1%20(41).png" />
+         </image>
+      </ImageView>
+      <Text layoutX="299.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Drafted Players" wrappingWidth="215.13671875">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <TableView fx:id="mydraftedplayers" layoutX="110.0" layoutY="489.0" prefHeight="200.0" prefWidth="593.0" style="-fx-background-color: light blue;">
+        <columns>
+          <TableColumn fx:id="playerposition" prefWidth="136.0" text="Player Name" />
+          <TableColumn fx:id="playername" prefWidth="456.0" text="Position " />
+        </columns>
+      </TableView>
+      <Button fx:id="returnbutton" layoutX="116.0" layoutY="732.0" mnemonicParsing="false" onAction="#returnbuttonaction" prefHeight="25.0" prefWidth="120.0" text="Return" />
+      <Button layoutX="545.0" layoutY="732.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" text="End Draft" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+//Nate R.This is my own work
+package Mock_NFL_Draft_Final_2018;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class NFLDraft extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        
+        Parent root = FXMLLoader.load(getClass().getResource("IntroConntroller.fxml"));
+        
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.setTitle("2018 Mock NFL Draft");
+        stage.show();
+    }  
+}

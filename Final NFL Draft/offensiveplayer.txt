@@ -1,0 +1,67 @@
+//Nate R. This is my own work. 
+package Mock_NFL_Draft_Final_2018;
+
+public class OffensivePlayer extends NFLPlayer {
+    private int rushingyards;
+    private int passingyards;
+    private int receivingyards;
+    private int touchdowns;
+    private int lostfumbles;
+	private int rushingYards;
+	private int recievingYards;
+	private int passingYards;
+    
+    public OffensivePlayer(){
+     }
+    
+    public OffensivePlayer(String name,int age, double height, double weight, String position, int grade, int speed, int elusiveness,
+      int rushingyards, int passingyards, int touchdowns, int receivingyards, int interceptionsthrown, int lostfumbles, String status){
+ 
+        this.setName(name);
+        this.setPosition(position);
+        this.setHeight(height);
+        this.setWeight(weight);
+        this.passingYards = 0;
+        this.recievingYards = 0;
+        this.rushingYards = 0;
+        this.touchdowns = 0;
+
+    }
+    @Override
+
+    //Setters and Getters 
+    
+    public String toString(){
+            return "Name:" +getName(); 
+    }
+    public int getRushingyards() {
+        return rushingyards;
+    }
+    public void setRushingyards(int rushingyards) {
+        this.rushingyards = rushingyards;
+    }
+    public int getPassingyards() {
+        return passingyards;
+    }
+    public void setPassingyards(int passingyards) {
+        this.passingyards = passingyards;
+    }
+    public int getTouchdowns() {
+        return touchdowns;
+    }
+    public void setTouchdowns(int touchdowns) {
+        this.touchdowns = touchdowns;
+    }
+    public int getReceivingyards() {
+        return receivingyards;
+    }
+    public void setReceivingyards(int receivingyards) {
+        this.receivingyards = receivingyards;
+    }
+    public int getLostfumbles() {
+        return lostfumbles;
+    }
+    public void setLostfumbles(int lostfumbles) {
+        this.lostfumbles = lostfumbles;
+    }
+}

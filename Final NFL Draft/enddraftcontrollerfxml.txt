@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="262.0" prefWidth="600.0" style="-fx-background-color: light blue;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nfldraft.EndDraftController">
+   <children>
+      <Text layoutX="88.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exiting the Draft?" textAlignment="CENTER" wrappingWidth="424.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="exitbutton" layoutX="130.0" layoutY="188.0" mnemonicParsing="false" onAction="#exitbuttonhandle" prefHeight="31.0" prefWidth="146.0" text="Yup, had enough" />
+      <Button fx:id="returnbutton" layoutX="381.0" layoutY="188.0" mnemonicParsing="false" onAction="#returnbuttonhandle" prefHeight="25.0" prefWidth="121.0" text="Nope" />
+   </children>
+</AnchorPane>

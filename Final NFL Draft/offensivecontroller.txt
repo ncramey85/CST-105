@@ -1,0 +1,99 @@
+//Nate R. This is my own work. 
+package Mock_NFL_Draft_Final_2018;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+public class OffensiveController implements Initializable {
+    @FXML
+    private TableColumn<NFLPlayer, Integer> receivingyardsfield;
+
+    @FXML
+    private TableColumn<NFLPlayer, Integer> fumblesfield;
+    
+    @FXML
+    private TableColumn<NFLPlayer, Integer> interceptionsfield;
+       
+    @FXML
+    private TableView<NFLPlayer> offensiveplayerstats;
+
+    @FXML
+    private TableColumn<NFLPlayer, Integer> touchdownfield;
+
+    @FXML
+    private TableColumn<NFLPlayer, Integer> passingyardsfield;
+    
+    @FXML
+    private TableColumn<NFLPlayer, Integer> rushingyardsfield;
+    
+    @FXML
+    private TableView<NFLPlayer> playertable;
+	
+    @FXML
+    private TableColumn<NFLPlayer, Integer> agefield;
+
+    @FXML
+    private Label namefield;
+
+    @FXML
+    private TableColumn<NFLPlayer, Double> heightfield;
+
+    @FXML
+    private Button returnbutton;
+    
+    @FXML
+    private Button draftedplayersbutton;
+
+    @FXML
+    private TableColumn<NFLPlayer, String> positionfield;
+
+    @FXML
+    private TableColumn<NFLPlayer, Double> weightfield;
+
+    @FXML
+    void returnbuttonactionitem(ActionEvent event) {
+        try {
+            Stage stage = (Stage) returnbutton.getScene().getWindow();
+            stage.close();
+
+    } catch(Exception e){
+        System.out.println("Cant load window");
+    	}
+ }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }     
+    public void SetPlayer(NFLPlayer c){
+        ArrayList<NFLPlayer> currentplayer= new ArrayList<>();
+        currentplayer.add(c);
+        namefield.setText(c.getName());
+       ObservableList<NFLPlayer> data= FXCollections.observableArrayList(currentplayer);
+               positionfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, String> ("position"));
+               agefield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Integer> ("age"));
+               weightfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Double> ("weight"));
+               heightfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Double> ("height"));
+               playertable.setItems(data);
+               
+               receivingyardsfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Integer> ("receivingyards"));
+               fumblesfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Integer> ("lostfumbles"));
+               touchdownfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Integer> ("touchdowns"));
+               interceptionsfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Integer> ("interceptionsthrown"));
+               passingyardsfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Integer> ("passingyards"));
+               rushingyardsfield.setCellValueFactory(new PropertyValueFactory<NFLPlayer, Integer> ("rushingyards"));
+       
+               
+               offensiveplayerstats.setItems(data);
+    }
+}
